@@ -80,7 +80,7 @@ app.get('/api/city/:city',
     (req, resp) => {
         const cityAbbrev = req.params.city;
         resp.type('application/json')
-		db.findCityById()
+		db.findCityById(cityAbbrev)
 		console.info(result)
             .then(result => {
                 if (result.indexOf(cityAbbrev.toUpperCase()) < 0) {
